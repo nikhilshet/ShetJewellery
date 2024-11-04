@@ -1,3 +1,5 @@
+import { faItalic } from '@fortawesome/free-solid-svg-icons';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,7 +11,7 @@ export default {
       keyframes:{
         popup:{
             '0%' :{
-              transform:'translateY(20px)',
+              transform:'translateY(40px)',
               opacity : '0',
             },
             '100%' : {
@@ -19,18 +21,18 @@ export default {
         }
       },
       fontFamily:{
-        sans:["Playfair Display", "serif"],
+        sans:["Cormorant Garamond", "serif"],
       },
       fontWeight: {
-        thin: 100,
-        extralight: 200,
         light: 300,
         regular: 400,
         medium: 500,
         semibold: 600,
         bold: 700,
-        extrabold: 800,
-        black: 900,
+      },
+      fontStyle:{
+        italic: 'italic',
+        normal: 'normal',
       },
       animation:{
         popup : 'popup 0.4s ease-in forwards'

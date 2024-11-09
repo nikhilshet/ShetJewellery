@@ -2,7 +2,7 @@ import React from 'react'
 import homeImage from '../assets/home1.png'
 import { useNav } from '../Context/NavbarContext'
 function Home() {
-  const {data} = useNav()
+  const {navData} = useNav()
 
   const transition = "translate-y-6 transition-transform duration-700 group-hover:-translate-y-6";
   return (
@@ -10,7 +10,7 @@ function Home() {
     <div className='w-full'>
         <div className='w-full h-screen bg-cover flex justify-center items-end pb-40'
             style={{ backgroundImage: `url(${homeImage})` }}> 
-            { data &&
+            { navData.isVisible &&
               <p className='text-white text-center text-2xl font-light animate-popup '>With over 40 years of experience in the jewelry industry, we specialize in creating luxurious,<br/> handcrafted pieces that embody timeless elegance and exceptional craftsmanship,<br/> offering you a legacy of opulence and sophistication.</p>   
              
              } 

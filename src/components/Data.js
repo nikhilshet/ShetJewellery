@@ -3,504 +3,554 @@ const data = {
     {
       "id": 1,
       "name": "Gold Necklace",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Necklace",
       "price": 1500.00,
       "rating": 4.5,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 2,
       "name": "Silver Ring",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Ring",
       "price": 500.00,
       "rating": 4.0,
       "wishlisted": false,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 3,
       "name": "Diamond Earrings",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Earrings",
       "price": 2500.00,
       "rating": 4.8,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "White"
     },
     {
       "id": 4,
       "name": "Gemstone Bracelet",
-      "category": "Gems",
+      "material": "Gems",
       "product": "Bracelet",
       "price": 1200.00,
       "rating": 4.2,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Blue"
     },
     {
       "id": 5,
       "name": "Gold Ring",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Ring",
       "price": 1800.00,
       "rating": 4.7,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Yellow"
     },
     {
       "id": 6,
       "name": "Silver Bracelet",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Bracelet",
       "price": 700.00,
       "rating": 4.1,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Silver"
     },
     {
       "id": 7,
       "name": "Gold Earrings",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Earrings",
       "price": 1350.00,
       "rating": 4.6,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 8,
       "name": "Diamond Ring",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Ring",
       "price": 3500.00,
       "rating": 4.9,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "White"
     },
     {
       "id": 9,
       "name": "Gemstone Necklace",
-      "category": "Gems",
+      "material": "Gems",
       "product": "Necklace",
       "price": 2200.00,
       "rating": 4.3,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Green"
     },
     {
       "id": 10,
       "name": "Silver Earrings",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Earrings",
       "price": 650.00,
       "rating": 3.9,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Silver"
     },
     {
       "id": 11,
       "name": "Gold Bracelet",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Bracelet",
       "price": 1600.00,
       "rating": 4.4,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 12,
       "name": "Diamond Bracelet",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Bracelet",
       "price": 4000.00,
       "rating": 4.7,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "White"
     },
     {
       "id": 13,
       "name": "Silver Necklace",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Necklace",
       "price": 900.00,
       "rating": 4.2,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Silver"
     },
     {
       "id": 14,
       "name": "Gold Anklet",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Anklet",
       "price": 1450.00,
       "rating": 4.3,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 15,
       "name": "Gemstone Earrings",
-      "category": "Gems",
+      "material": "Gems",
       "product": "Earrings",
       "price": 1100.00,
       "rating": 4.4,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Purple"
     },
     {
       "id": 16,
       "name": "Diamond Necklace",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Necklace",
       "price": 4500.00,
       "rating": 4.9,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "White"
     },
     {
       "id": 17,
       "name": "Silver Anklet",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Anklet",
       "price": 500.00,
       "rating": 3.8,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Silver"
     },
     {
       "id": 18,
       "name": "Gold Brooch",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Brooch",
       "price": 1300.00,
       "rating": 4.5,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Yellow"
     },
     {
       "id": 19,
       "name": "Gemstone Ring",
-      "category": "Gems",
+      "material": "Gems",
       "product": "Ring",
       "price": 950.00,
       "rating": 4.0,
       "wishlisted": false,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Red"
     },
     {
       "id": 20,
       "name": "Diamond Brooch",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Brooch",
       "price": 5000.00,
       "rating": 4.8,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "White"
     },
     {
       "id": 21,
       "name": "Silver Brooch",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Brooch",
       "price": 600.00,
       "rating": 3.9,
       "wishlisted": false,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 22,
       "name": "Gold Pendant",
-      "category": "Gold",
+      "material": "Gold",
       "product": "Pendant",
       "price": 1200.00,
       "rating": 4.2,
       "wishlisted": true,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Yellow"
     },
     {
       "id": 23,
       "name": "Gemstone Pendant",
-      "category": "Gems",
+      "material": "Gems",
       "product": "Pendant",
       "price": 1050.00,
       "rating": 4.3,
       "wishlisted": false,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "Green"
     },
     {
       "id": 24,
       "name": "Diamond Anklet",
-      "category": "Diamond",
+      "material": "Diamond",
       "product": "Anklet",
       "price": 5500.00,
       "rating": 4.7,
       "wishlisted": true,
-      "gender": "Women"
+      "gender": "Women",
+      "color": "White"
     },
     {
       "id": 25,
       "name": "Silver Pendant",
-      "category": "Silver",
+      "material": "Silver",
       "product": "Pendant",
       "price": 700.00,
       "rating": 4.1,
       "wishlisted": false,
-      "gender": "Men"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 26,
       "name": "Elegant Gold Necklace",
-      "category": "gold",
-      "product": "necklace",
+      "material": "Gold",
+      "product": "Necklace",
       "price": 1500,
       "rating": 4.8,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 27,
       "name": "Classic Silver Ring",
-      "category": "silver",
-      "product": "ring",
+      "material": "Silver",
+      "product": "Ring",
       "price": 300,
-      "rating": 4.5,
+      "rating": 4.0,
       "wishlisted": false,
-      "gender": "women"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 28,
-      "name": "Luxury Diamond Bracelet",
-      "category": "diamond",
-      "product": "bracelet",
-      "price": 5000,
-      "rating": 4.9,
+      "name": "Ruby Gemstone Pendant",
+      "material": "Gems",
+      "product": "Pendant",
+      "price": 800,
+      "rating": 4.5,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Red"
     },
     {
       "id": 29,
-      "name": "Sapphire Stud Earrings",
-      "category": "gems",
-      "product": "earrings",
-      "price": 700,
-      "rating": 4.3,
-      "wishlisted": true,
-      "gender": "women"
+      "name": "Pearl Stud Earrings",
+      "material": "Pearl",
+      "product": "Earrings",
+      "price": 1200,
+      "rating": 4.2,
+      "wishlisted": false,
+      "gender": "Women",
+      "color": "White"
     },
     {
       "id": 30,
-      "name": "Bold Gold Cufflinks",
-      "category": "gold",
-      "product": "cufflinks",
-      "price": 800,
+      "name": "Sapphire Bracelet",
+      "material": "Gems",
+      "product": "Bracelet",
+      "price": 2500,
       "rating": 4.6,
-      "wishlisted": false,
-      "gender": "men"
+      "wishlisted": true,
+      "gender": "Women",
+      "color": "Blue"
     },
     {
       "id": 31,
-      "name": "Sterling Silver Chain",
-      "category": "silver",
-      "product": "chain",
-      "price": 120,
-      "rating": 4.4,
+      "name": "Platinum Wedding Band",
+      "material": "Platinum",
+      "product": "Ring",
+      "price": 3000,
+      "rating": 4.9,
       "wishlisted": true,
-      "gender": "men"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 32,
-      "name": "Diamond Studded Pendant",
-      "category": "diamond",
-      "product": "pendant",
-      "price": 3500,
-      "rating": 4.7,
-      "wishlisted": true,
-      "gender": "women"
+      "name": "Onyx Beaded Necklace",
+      "material": "Onyx",
+      "product": "Necklace",
+      "price": 1100,
+      "rating": 4.1,
+      "wishlisted": false,
+      "gender": "Women",
+      "color": "Black"
     },
     {
       "id": 33,
-      "name": "Emerald Drop Earrings",
-      "category": "gems",
-      "product": "earrings",
-      "price": 450,
-      "rating": 4.2,
-      "wishlisted": false,
-      "gender": "women"
+      "name": "Turquoise Gemstone Anklet",
+      "material": "Gems",
+      "product": "Anklet",
+      "price": 950,
+      "rating": 4.3,
+      "wishlisted": true,
+      "gender": "Women",
+      "color": "Blue"
     },
     {
       "id": 34,
-      "name": "Gold Band Ring",
-      "category": "gold",
-      "product": "ring",
-      "price": 500,
-      "rating": 4.5,
-      "wishlisted": false,
-      "gender": "men"
+      "name": "Rose Gold Engagement Ring",
+      "material": "Gold",
+      "product": "Ring",
+      "price": 3500,
+      "rating": 4.9,
+      "wishlisted": true,
+      "gender": "Women",
+      "color": "Rose Gold"
     },
     {
       "id": 35,
-      "name": "Silver Hoop Earrings",
-      "category": "silver",
-      "product": "earrings",
-      "price": 150,
+      "name": "Sterling Silver Cufflinks",
+      "material": "Silver",
+      "product": "Cufflinks",
+      "price": 450,
       "rating": 4.0,
       "wishlisted": false,
-      "gender": "women"
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 36,
-      "name": "Diamond Tennis Bracelet",
-      "category": "diamond",
-      "product": "bracelet",
-      "price": 4000,
-      "rating": 4.9,
+      "name": "Emerald Stud Earrings",
+      "material": "Gems",
+      "product": "Earrings",
+      "price": 1400,
+      "rating": 4.5,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Green"
     },
     {
       "id": 37,
-      "name": "Ruby Cocktail Ring",
-      "category": "gems",
-      "product": "ring",
-      "price": 600,
-      "rating": 4.6,
-      "wishlisted": true,
-      "gender": "women"
+      "name": "Bronze Choker Necklace",
+      "material": "Bronze",
+      "product": "Necklace",
+      "price": 700,
+      "rating": 3.8,
+      "wishlisted": false,
+      "gender": "Women",
+      "color": "Bronze"
     },
     {
       "id": 38,
-      "name": "Silver Tie Clip",
-      "category": "silver",
-      "product": "tie clip",
-      "price": 200,
-      "rating": 4.2,
-      "wishlisted": false,
-      "gender": "men"
+      "name": "Amethyst Bracelet",
+      "material": "Gems",
+      "product": "Bracelet",
+      "price": 1800,
+      "rating": 4.4,
+      "wishlisted": true,
+      "gender": "Women",
+      "color": "Purple"
     },
     {
       "id": 39,
-      "name": "Gold Plated Cuff Bracelet",
-      "category": "gold",
-      "product": "bracelet",
-      "price": 700,
-      "rating": 4.4,
-      "wishlisted": true,
-      "gender": "women"
+      "name": "Titanium Band Ring",
+      "material": "Titanium",
+      "product": "Ring",
+      "price": 2000,
+      "rating": 4.6,
+      "wishlisted": false,
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 40,
-      "name": "Amethyst Stud Earrings",
-      "category": "gems",
-      "product": "earrings",
-      "price": 250,
-      "rating": 4.3,
+      "name": "Aquamarine Pendant",
+      "material": "Gems",
+      "product": "Pendant",
+      "price": 1600,
+      "rating": 4.7,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Blue"
     },
     {
       "id": 41,
-      "name": "Gold Signet Ring",
-      "category": "gold",
-      "product": "ring",
-      "price": 900,
-      "rating": 4.7,
+      "name": "Coral Anklet",
+      "material": "Gems",
+      "product": "Anklet",
+      "price": 800,
+      "rating": 4.2,
       "wishlisted": false,
-      "gender": "men"
+      "gender": "Women",
+      "color": "Red"
     },
     {
       "id": 42,
-      "name": "Silver Stud Earrings",
-      "category": "silver",
-      "product": "earrings",
-      "price": 100,
-      "rating": 4.1,
-      "wishlisted": false,
-      "gender": "women"
+      "name": "Palladium Necklace",
+      "material": "Palladium",
+      "product": "Necklace",
+      "price": 3100,
+      "rating": 4.8,
+      "wishlisted": true,
+      "gender": "Men",
+      "color": "Silver"
     },
     {
       "id": 43,
-      "name": "Gold Choker Necklace",
-      "category": "gold",
-      "product": "necklace",
-      "price": 1400,
-      "rating": 4.8,
+      "name": "Citrine Earrings",
+      "material": "Gems",
+      "product": "Earrings",
+      "price": 1150,
+      "rating": 4.4,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 44,
-      "name": "Silver Engraved Bracelet",
-      "category": "silver",
-      "product": "bracelet",
-      "price": 350,
-      "rating": 4.5,
-      "wishlisted": true,
-      "gender": "men"
-    },
-    {
-      "id": 45,
-      "name": "Opal Gemstone Pendant",
-      "category": "gems",
-      "product": "pendant",
-      "price": 550,
-      "rating": 4.4,
-      "wishlisted": true,
-      "gender": "women"
-    },
-    {
-      "id": 46,
-      "name": "Diamond Cluster Ring",
-      "category": "diamond",
-      "product": "ring",
+      "name": "Ivory Brooch",
+      "material": "Ivory",
+      "product": "Brooch",
       "price": 4500,
       "rating": 4.9,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Men",
+      "color": "White"
+    },
+    {
+      "id": 45,
+      "name": "Sapphire Brooch",
+      "material": "Gems",
+      "product": "Brooch",
+      "price": 3600,
+      "rating": 4.7,
+      "wishlisted": true,
+      "gender": "Men",
+      "color": "Blue"
+    },
+    {
+      "id": 46,
+      "name": "Gold Stud Earrings",
+      "material": "Gold",
+      "product": "Earrings",
+      "price": 1250,
+      "rating": 4.5,
+      "wishlisted": true,
+      "gender": "Women",
+      "color": "Yellow"
     },
     {
       "id": 47,
-      "name": "Silver Brooch Pin",
-      "category": "silver",
-      "product": "brooch",
-      "price": 120,
-      "rating": 4.3,
+      "name": "Black Onyx Ring",
+      "material": "Onyx",
+      "product": "Ring",
+      "price": 900,
+      "rating": 4.2,
       "wishlisted": false,
-      "gender": "women"
+      "gender": "Men",
+      "color": "Black"
     },
     {
       "id": 48,
-      "name": "Gold Bangle Set",
-      "category": "gold",
-      "product": "bangles",
-      "price": 950,
-      "rating": 4.6,
+      "name": "Peridot Necklace",
+      "material": "Gems",
+      "product": "Necklace",
+      "price": 1800,
+      "rating": 4.5,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Green"
     },
     {
       "id": 49,
-      "name": "Diamond Drop Earrings",
-      "category": "diamond",
-      "product": "earrings",
-      "price": 3000,
-      "rating": 4.7,
+      "name": "Rose Gold Cufflinks",
+      "material": "Gold",
+      "product": "Cufflinks",
+      "price": 1400,
+      "rating": 4.3,
       "wishlisted": true,
-      "gender": "women"
+      "gender": "Men",
+      "color": "Rose Gold"
     },
     {
       "id": 50,
-      "name": "Sapphire Gemstone Necklace",
-      "category": "gems",
-      "product": "necklace",
-      "price": 800,
-      "rating": 4.5,
+      "name": "Turquoise Stud Earrings",
+      "material": "Gems",
+      "product": "Earrings",
+      "price": 850,
+      "rating": 4.1,
       "wishlisted": false,
-      "gender": "women"
+      "gender": "Women",
+      "color": "Blue"
     }
   ]
-}
+};
 
-  export default data;
+export default data;

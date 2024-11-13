@@ -7,7 +7,7 @@ export function useNav(){
 }
 
 export function NavProvider({children}){
-    const [navData , setNavData] = useState({isVisible:false , gender:"" , subCategory:""})
+    const [navData , setNavData] = useState({isVisible:false})
     return(
         <navContext.Provider value={{navData , setNavData}}>
             {children}

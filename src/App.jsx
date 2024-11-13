@@ -7,6 +7,7 @@ import Shop from './components/Shop'
 import { NavProvider } from './Context/NavbarContext'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
+import { FilterContextProvider } from './Context/FilterContext'
 function App() {
 
 
@@ -24,9 +25,11 @@ const router = createBrowserRouter(
 
 
   return (
-  <NavProvider>    
-     <RouterProvider router={router}/>
-  </NavProvider>
+    <FilterContextProvider>
+      <NavProvider>    
+        <RouterProvider router={router}/>
+      </NavProvider>
+    </FilterContextProvider>
 
    
   )

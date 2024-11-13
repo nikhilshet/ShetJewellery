@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNav } from '../../Context/NavbarContext'
 import { useNavigate } from 'react-router-dom'
+import { useFilter } from '../../Context/FilterContext'
 
 const menuItem = [
     {
@@ -17,13 +18,13 @@ const menuItem = [
 
 function DropDown() {
     const navigate = useNavigate()
-    const {navData , setNavData} = useNav()
+
+    const {filter , setFilter} = useFilter()
     
     const [menuIndex , setMenuIndex] = useState(null)
     const [open , setOpen] = useState({menu:false , subMenu:false})
 
-    console.log( menuIndex);
-    console.log(navData);
+    console.log(filter)
     
 
 
@@ -32,31 +33,24 @@ function DropDown() {
             return{
                 ...prev,
                 menu: !prev.menu,
-                
+                subMenu: false
             }
         })
         if(!open.menu){
             setMenuIndex(null)
-            setNavData((prev)=>{
+
+            setFilter((prev)=>{
                 return{
                     ...prev,
                     gender:"",
-                    subCategory:""
+                    dropdown:""
                 }
             })
         }
     }
 
     function handleGenderMenu(menu , index){
-        if(menuIndex === index){
-            setOpen((prev)=>{
-                return{
-                    ...prev,
-                    subMenu : !prev.subMenu
-                }
-            })
-            
-        }else{
+        
             setMenuIndex(index)
 
             setOpen((prev)=>{
@@ -68,9 +62,9 @@ function DropDown() {
     
             })
           
-        }
+        
 
-        setNavData((prev)=>{
+        setFilter((prev)=>{
             return{
                 ...prev,
                 gender : menu.title
@@ -80,14 +74,21 @@ function DropDown() {
     }
 
     function handleSubCategory(prod){
-        setNavData((prev)=>{
+        setFilter((prev)=>{
             return{
                 ...prev,
-                subCategory : prod
+                category: [prod],
+                dropdown: prod
+                
+
             }
         })
+        
+        
+            navigate(`/${filter.gender}/${prod}`)
+        
 
-        navigate(`/${navData.gender}/${prod}`);
+        
 
 
     }
@@ -109,7 +110,7 @@ function DropDown() {
 //   }
 
   const gender = menuItem.map((menu , index)=>(
-    <li className={`m-1 text-lg rounded-md transition-all duration-200  hover:bg-slate-100 hover:font-semibold ${index === menuIndex ? 'bg-slate-100 font-semibold' : ''}`} onClick={()=>handleGenderMenu(menu, index)} key={index}>{menu.title} <span className='float-right font-bold'> {index === menuIndex ? "": '>' }</span>
+    <li className={`m-1 text-lg rounded-md transition-all duration-200  hover:bg-slate-100 hover:font-semibold ${index === menuIndex ? 'bg-slate-100 font-semibold' : ''}`} onClick={()=>handleGenderMenu(menu, index)} key={index}>{menu.title}  <span className='float-right font-bold'> {index === menuIndex ? "": '>' }</span>
     </li>
   ))
 

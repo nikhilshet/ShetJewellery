@@ -7,6 +7,8 @@ import { useFilter } from '../Context/FilterContext'
 function Product() {
   const {gender , subCategory} = useParams()
 
+  console.log(gender);
+  
   const {navData} = useNav()
 
   const [selectedFilter , setSelecetdFilter] = useState(null)
@@ -17,20 +19,47 @@ function Product() {
   console.log(filter);
   
   function handleChange(e){
+      const {value , checked , name , type} = e.target;
+    if(type !== "checkbox"){
+      setFilter((prev)=>{
+        return{
+          ...prev,
+          [name] : value
+        }
+      })
+    }
+    else{
+      if(checked){
+        setFilter((prev)=>{
+          return{
+            ...prev,
+            [name]:[...prev[name] , value]
+          }
+        })
+      }else{
+        setFilter((prev)=>{
+          return{
+            ...prev,
+            [name] : prev[name].filter((item)=>(item !== value))
+          }
+        })
+      }
+    }
 
-  }
-  
+}
   
   const filterdProducts = data.products.filter((prod)=>{
-    if
-    (!gender || prod.gender.toLowerCase() === gender.toLowerCase() && 
-    (!subCategory || prod.product.toLowerCase() === subCategory.toLowerCase())
-  ){
-      return(prod)
+    if(
+        gender.toLowerCase() === prod.gender.toLowerCase() &&
+        (!subCategory || subCategory.toLowerCase() === prod.product.toLowerCase()) &&
+        (!filter.rating || prod.rating > filter.rating) 
+    ){
+      return prod
     }
   })
 
-
+  console.log(filterdProducts);
+  
   
 
   const filterObject = {
@@ -44,7 +73,7 @@ function Product() {
     },
     rating:{
       title:"Rating",
-      options: [ 4.0 ,  3.0 ,  2.0 ,  1.0]
+      options: [4.5 , 4.0 ,  3.0 ,  2.0 ,  1.0]
     }
 
   }
@@ -65,7 +94,9 @@ function Product() {
   )
   
   const filterOptions = Object.keys(filterObject).map((key)=>{
+  
     return(
+      
       <p key={key} onClick={()=>filterClick(key)} className='ml-5 font-semibold text-lg cursor-pointer'>{filterObject[key].title}</p>
     )
   })
@@ -79,14 +110,24 @@ function Product() {
       setSelecetdFilter(category)
     }
   }
-
+  console.log(selectedFilter);
+  
   const subFilterOptions = selectedFilter && filterObject[selectedFilter].options.map((list)=>{
-    return(
-      <div className='flex space-x-2'>
-        <input key={list} onChange={handleChange}  type="checkbox" value={list} id={list}/>
+    if(selectedFilter === 'rating'){
+      return(
+      <div className='flex space-x-2'>    
+        <input key={list} onChange={handleChange} name={selectedFilter} type="radio" value={list} id={list}/>
         <label htmlFor={list}>{list}</label>
       </div>
-    )
+      )
+    }else{
+      return(
+      <div className='flex space-x-2'>    
+        <input key={list} onChange={handleChange} name={selectedFilter} type="checkbox" value={list} id={list}/>
+        <label htmlFor={list}>{list}</label>
+      </div>
+    )}
+    
   })
 
 

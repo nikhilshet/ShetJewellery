@@ -64,13 +64,26 @@ function DropDown() {
           
         
 
+            setFilter((prev)=>{
+                return{
+                    ...prev,
+                    gender : menu.title
+                }
+            })
+ 
+    }
+
+    function genderClick(menu){
+        
         setFilter((prev)=>{
             return{
                 ...prev,
-                gender : menu.title
+                gender : menu.title,
+                dropdown : ""
             }
         })
- 
+
+        navigate(`/${menu.title}`)
     }
 
     function handleSubCategory(prod){
@@ -79,38 +92,16 @@ function DropDown() {
                 ...prev,
                 category: [prod],
                 dropdown: prod
-                
-
             }
         })
-        
-        
+
             navigate(`/${filter.gender}/${prod}`)
-        
-
-        
-
-
     }
  
     
-//   function handleChange(e){
-//     if(navData.gender){
-//     navigate(`/shop/${e.target.value}`)
-//     }else{
-//       navigate('/shop/womens')
-//     }
-
-//     setNavData((prev)=>{
-//       return{
-//         ...prev,
-//         [e.target.name] : e.target.value
-//       }
-//     })
-//   }
 
   const gender = menuItem.map((menu , index)=>(
-    <li className={`m-1 text-lg rounded-md transition-all duration-200  hover:bg-slate-100 hover:font-semibold ${index === menuIndex ? 'bg-slate-100 font-semibold' : ''}`} onClick={()=>handleGenderMenu(menu, index)} key={index}>{menu.title}  <span className='float-right font-bold'> {index === menuIndex ? "": '>' }</span>
+    <li className={`m-1 text-lg rounded-md transition-all duration-200  hover:bg-slate-100 hover:font-semibold ${index === menuIndex ? 'bg-slate-100 font-semibold' : ''}`} onClick={()=>genderClick(menu)} onMouseOver={()=>handleGenderMenu(menu, index)} key={index}>{menu.title}  <span className='float-right font-bold'> {index === menuIndex ? "": '>' }</span>
     </li>
   ))
 

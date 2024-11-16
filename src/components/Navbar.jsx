@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNav } from '../Context/NavbarContext'
 import { NavLink, useNavigate } from 'react-router-dom'
 import DropDown from './subComponents/DropDown'
+import { useFilter } from '../Context/FilterContext'
 
 
 function Navbar() {
   const navigate = useNavigate()
   const {navData , setNavData} = useNav()
-  console.log(navData)
+  const {filter, setFilter} = useFilter()
+  // console.log(navData)
   const nav = useRef()
 
 
@@ -35,8 +37,23 @@ function Navbar() {
     observer.observe(nav.current)
   },[])
   
+  function homeClick(){
+    setFilter({
+      gender:"",
+      category:[],
+      material:[],
+      color:[],
+      rating:0,
+      priceRange : 0,
+  })
 
+    navigate("")
 
+ 
+
+    
+  }
+  console.log(filter);
   return (
     <>
     <div  ref={nav}  className='w-full h-16 bg-white flex items-center justify-between px-16'>
@@ -44,7 +61,7 @@ function Navbar() {
         <p className='mr-5 text-xl'>Menu </p>
         <p className=' text-xl'>Search</p>
       </div>
-      <img onClick={()=>navigate("")} className='w-32' src='../home/SHET.png'></img>
+      <img onClick={homeClick} className='w-32' src='../home/SHET.png'></img>
       <div>
       <p className=' text-xl'>Welcome User</p>
       </div>
@@ -56,20 +73,27 @@ function Navbar() {
 
 
 
-
-          <li className='mx-5 font-light cursor-pointer'>
-          
+          <li className='mx-5 relative font-light cursor-pointer group'>
               <DropDown/>
-
+              <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-black" : "bg-white" } group-hover:w-8 transition-all`}></div>
             </li>
-
-          <li className='mx-5 font-light cursor-pointer'>
-          <NavLink to="about">ABOUT</NavLink></li>
-          <li className='mx-5 font-light cursor-pointer'>
-          <NavLink to="/contact">CONTACT</NavLink></li>
+          
+            <li className='mx-5 relative font-light cursor-pointer group '>
+            <NavLink to="about">ABOUT</NavLink>
+            <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-black" : "bg-white" } group-hover:w-8 transition-all`}></div>
+            </li>
+            
+          
+          <li className='mx-5 relative font-light cursor-pointer group'>
+          <NavLink to="/contact">CONTACT</NavLink>
+          <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-black" : "bg-white" } group-hover:w-8 transition-all`}></div>
+          </li>
     
-          <li className='mx-5 font-light cursor-pointer'>
-          <NavLink to="/gift">GIFT</NavLink></li>
+          <li className='mx-5 relative font-light cursor-pointer group'>
+          <NavLink to="/gift">GIFT</NavLink>
+          <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-black" : "bg-white" } group-hover:w-8 transition-all`}></div>
+          </li>
+
         </ul>
        </div>
        <div>

@@ -1,9 +1,10 @@
 import React from 'react'
+import whiteLogo from '../assets/SHETW.png'
 
 function Footer() {
   return (
     <footer className='bottom-0 bg-black w-full h-96 px-20 text-white grid grid-cols-2 grid-rows-2 place-content-center' >
-        <img className="w-32 h-32 m-0" src='../home/SHETW.png'></img> 
+        <img className="w-32 h-32 m-0" src={whiteLogo}></img> 
         <p className='font-extralight float-right mt-10'>Socials : Instagram Twitter Facebook</p>
        
         <ul className='font-extralight'>

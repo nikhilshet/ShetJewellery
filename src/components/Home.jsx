@@ -11,7 +11,7 @@ function Home() {
         <div className='w-full h-screen bg-cover flex justify-center items-end pb-40'
             style={{ backgroundImage: `url(${homeImage})` }}> 
             { navData.isVisible &&
-              <p className='text-white text-center text-2xl font-light animate-popup '>With over 40 years of experience in the jewelry industry, we specialize in creating luxurious,<br/> handcrafted pieces that embody timeless elegance and exceptional craftsmanship,<br/> offering you a legacy of opulence and sophistication.</p>   
+              <p className='text-white text-center text-2xl font-extralight animate-popup '>With over 40 years of experience in the jewelry industry, we specialize in creating luxurious,<br/> handcrafted pieces that embody timeless elegance and exceptional craftsmanship,<br/> offering you a legacy of opulence and sophistication.</p>   
              
              } 
         </div>
@@ -62,7 +62,7 @@ function Home() {
       <div className='grid grid-cols-2'>
             <img src='../home/men.png'></img>
             <div className='flex flex-col justify-center items-center pl-5'>
-              <p className='text-left text-light text-xl'>Explore our curated collection of men’s jewelry, crafted to reflect strength <br/> and sophistication. From sleek bracelets to timeless rings,<br/> each piece is designed to elevate your style with premium materials<br/> and bold designs for the modern man.</p>
+              <p className='text-left font-extralight text-xl'>Explore our curated collection of men’s jewelry, crafted to reflect strength <br/> and sophistication. From sleek bracelets to timeless rings,<br/> each piece is designed to elevate your style with premium materials<br/> and bold designs for the modern man.</p>
               <button className='w-20 h-10 bg-white border-2 transition-all text-xl duration-500 border-black mt-10 hover:bg-black hover:text-white'>Men</button>
               </div>
       </div>
@@ -71,7 +71,7 @@ function Home() {
       <div className='grid grid-cols-2'>
             
             <div className='flex flex-col justify-center items-center p-10'>
-              <p className='text-right text-light text-xl'>Explore our curated collection of men’s jewelry, crafted to reflect strength <br/> and sophistication. From sleek bracelets to timeless rings,<br/> each piece is designed to elevate your style with premium materials<br/> and bold designs for the modern man.</p>
+              <p className='text-right font-extralight text-xl'>Explore our curated collection of men’s jewelry, crafted to reflect strength <br/> and sophistication. From sleek bracelets to timeless rings,<br/> each piece is designed to elevate your style with premium materials<br/> and bold designs for the modern man.</p>
               <button className='w-20 h-10 bg-white border-2 text-xl transition-all duration-500 border-black mt-10 hover:bg-black hover:text-white'>Women</button>
             </div>
             <img src='../home/women.png'></img>

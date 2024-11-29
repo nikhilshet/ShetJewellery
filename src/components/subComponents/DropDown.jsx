@@ -100,6 +100,7 @@ function DropDown() {
             return{
                 ...prev,
                 category: [prod]
+
             }
         })
         setOpen((prev)=>{

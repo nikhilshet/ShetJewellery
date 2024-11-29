@@ -8,7 +8,7 @@ export function useFilter(){
 
 export function FilterContextProvider({children}){
     const [filter , setFilter] = useState({
-        gender:[],
+        gender:"",
         category:[],
         material:[],
         color:[],

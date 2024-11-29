@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Navigate, useParams , useNavigate} from 'react-router-dom'
 import data from './Data'
 import { useNav } from '../Context/NavbarContext'
 import { useFilter } from '../Context/FilterContext'
 
 function Product() {
   const {gender , subCategory} = useParams()
-
+  console.log(gender , subCategory);
+  
+  const navigate = useNavigate()
   const {navData} = useNav()
 
   const [selectedFilter , setSelecetdFilter] = useState(null)
@@ -22,13 +24,35 @@ function Product() {
     priceRange : 0,
 })
 
+if(subCategory){
+  useEffect(()=>{
+    setFilter((prev)=>{
+      return{
+        ...prev,
+        category:[subCategory]
+      }
+    })
+},[subCategory])
+}
 
 
- 
+  useEffect(()=>{
+    setFilter((prev)=>{
+      return{
+        ...prev,
+        gender: gender
+      }
+    })
+},[gender])
+
+
   function applyFilter(){
     setFilter(tempFilter)
     setOpenFilter(false)
   }
+
+  
+
   function handleChange(e){
       const {value , checked , name , type} = e.target;
     if(type !== "checkbox"){
@@ -42,9 +66,12 @@ function Product() {
     else{
       if(checked){
         setTempFilter((prev)=>{
+          console.log("prev",prev);
+          
           return{
             ...prev,
             [name]:[...prev[name] , value]
+
           }
         })
       }else{
@@ -64,6 +91,8 @@ function Product() {
     if(
         gender.toLowerCase() === prod.gender.toLowerCase() 
         &&
+        // ((!subCategory) || subCategory.toLowerCase() === prod.product.toLowerCase() )
+        // &&
         ((!filter.rating) || prod.rating > filter.rating) 
         &&
         (!filter.material.length > 0 || (Array.isArray(filter.material) && filter.material.includes(prod.material)))
@@ -99,7 +128,9 @@ function Product() {
 
   }
 
-
+  function handleProductClick(prod){
+    navigate(`/product/${prod.product}/${prod.id}` , {state:{prod}})
+  } 
   
   
   
@@ -108,24 +139,34 @@ function Product() {
   
   const products = filterdProducts.map((prod , index) => {
     return(
-      <div key={index} className='w-72 h-86 bg-slate-400 flex flex-col '>
-        <img className='w-full h-60' src='../home/diamonds.jpg'></img>
-        <p className='text-xl'>{prod.name}</p>
-        <p className='text-xl'>{prod.price}</p>
-        <p className='text-xl'>{prod.rating}</p>
-        <p className='text-xl'>{prod.color}</p>
-        <p className='text-xl'>{prod.gender}</p>
+      <div onClick={()=>handleProductClick(prod)} key={index} className=' w-86 h-86 p-4 flex flex-col '>
+        <div className=''>
+         <img className='w-full h-60' src='../home/diamonds.jpg'></img>
+        </div>
+        <div className='flex flex-col items-center'>
+          <p className='text-lg font-light text-slate-700'>{prod.name}</p>
+          <p className='text-md font-light text-slate-700'>$ {prod.price}</p>       
+          <p className='text-sm font-light text-slate-700'>★ {prod.rating}</p>
+
+  
+          
+        </div>
       </div>
     )
   }
   )
+  console.log(openFilter);
   
   const filterOptions = Object.keys(filterObject).map((key)=>{
   
     return(
      
-      <p key={key} onClick={()=>filterClick(key)} className={`ml-5 relative font-semibold text-lg cursor-pointer group ${key.toLowerCase() === selectedFilter ? "opacity-50" :""}`}>{filterObject[key].title}
-        <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-white" : "bg-black" } group-hover:w-8 transition-all`}></div>
+      <p key={key} onClick={()=>filterClick(key)} className={`ml-5 relative font-light text-lg cursor-pointer group`}>{filterObject[key].title}
+      {openFilter ?
+        <div className={`w-0 h-0.5 absolute ${navData.isVisible ? "bg-white" : "bg-black" } ${key.toLowerCase() === selectedFilter ? "w-8" :""} group-hover:w-8 group-hover:bg-yellow-300  transition-all`}></div>
+        :
+        ""
+      }
       </p>
       
     )
@@ -175,15 +216,13 @@ console.log("color" , filter.color);
 
   return (
 <div className="">
-  <div className={`sticky top-16 px-4 py-4 flex justify-between items-center ${navData.isVisible ? "bg-black text-white" : "bg-white text-black"}`}>
-    <h1 className="text-lg font-semibold">{gender} {subCategory && `/${subCategory}`}</h1>
-    <div className='flex'>
-    
+  <div className={`sticky top-16 flex flex-col justify-center items-center ${navData.isVisible ? "bg-black text-white" : "bg-white text-black"}`}>
+    <div className='flex h-16 justify-center items-center'>
       {filterOptions}
     </div>
   </div>
   {openFilter && 
-  <div className='absolute w-full h-60 bg-white flex flex-col items-center '>
+  <div className={`absolute w-full h-60 bg-white flex flex-col items-center z-10 `}>
     <p className='text-xl font-semibold first-letter:uppercase'>{selectedFilter}</p>
       {subFilterOptions}
       <button onClick={applyFilter} className='bg-blue-500'>Apply Filters</button>
@@ -191,8 +230,9 @@ console.log("color" , filter.color);
     
     }
   
-  <div className="flex justify-evenly items-center p-12">
-    <div className="grid grid-cols-4 gap-10">
+  
+  <div className="flex justify-evenly items-center p-12 z-5">
+    <div className="grid grid-cols-5">
       {products}
     </div>
   </div>
